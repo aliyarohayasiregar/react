@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+}
+
+#root {
+  font-family: "Google Sans", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  & h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  > header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background-color: #448;
+    color: white;
+    align-items: center;
+
+    > .logo {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: large;
+      font-weight: bold;
+    }
+
+    & a {
+      color: white;
+      text-decoration: none;
+    }
+
+    & nav {
+      display: flex;
+
+      > a {
+        padding-inline: 16px;
+        height: 32px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+
+        &.active {
+          background-color: white;
+          color: #44b;
+        }
+      }
+    }
+  }
+
+  & .products {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    > * {
+      display: flex;
+      padding: 8px;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    > header {
+      border-bottom: 1px solid #888;
+
+      > * {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      > section > label {
+        display: flex;
+        flex-direction: column;
+        font-size: small;
+      }
+
+      & input,
+      select {
+        height: 24px;
+        padding: 0 4px;
+      }
+    }
+
+    > main {
+      display: flex;
+      gap: 8px;
+      padding: 16px;
+      flex-wrap: wrap;
+
+      > .product {
+        width: 256px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 24px;
+
+        > img {
+          max-width: 100%;
+          border-top-left-radius: 24px;
+          border-top-right-radius: 24px;
+          border: solid #ddd;
+          border-width: 4px 4px 0 4px;
+        }
+
+        > section {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          padding: 16px;
+          background-color: #ddd;
+          border-bottom-left-radius: 24px;
+          border-bottom-right-radius: 24px;
+
+          > h2 {
+            font-size: medium;
+          }
+
+          > p {
+            color: #444;
+          }
+
+          > button {
+            align-self: flex-end;
+          }
+        }
+      }
+    }
+
+    > footer > div {
+      width: 36px;
+      height: 36px;
+      border-radius: 100%;
+      border: 1px solid #44b;
+      color: #44b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  > footer {
+    padding: 8px 16px;
+    text-align: center;
+  }
+
+  & button {
+    background-color: #44b;
+    color: white;
+    height: 36px;
+    padding-inline: 18px;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+    min-width: 96px;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #66d;
+    }
+
+    &:disabled {
+      background-color: #44b4;
+      cursor: not-allowed;
+    }
+  }
+}
